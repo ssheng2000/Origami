@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            overflow: auto;
+        }
+
+        canvas {
+            border: 1px solid #000000;
+            cursor: crosshair;
+            margin: 5px;
+            float: left;
+
+        }
+
+        #menu {
+            width: 200px;
+            background-color: #f0f0f0;
+            padding: 10px;
+            margin-left: 5px;
+            float: right;
+
+        }
+
+        #menu h2 {
+            margin-top: 0;
+        }
+
+        #menu input {
+            margin-bottom: 5px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+    </style>
+    <h1>ye</h1>
+    <title>Interactive Planar Graph</title>
+</head>
+<body>
+
+<canvas id="graph_canvas"></canvas>
+<canvas id="circle_packing_canvas"></canvas>
+
+<div id="menu">
+    <h2>Node Properties</h2>
+    <label for="node_x">X:</label>
+    <input type="number" id="node_x"><br>
+    <label for="node_y">Y:</label>
+    <input type="number" id="node_y"><br>
+    <button onclick="menu_update_node()">Update Node</button>
+    <button onclick="scale_everything()">Scale Everything</button>
+    <button onclick="update_creases()">Generate Crease Pattern</button>
+    <button onclick="menu_show_creases_only()">View Creases Only</button>
+    <h2>Edge Lengths</h2>
+    <ul id="edge_lengths"></ul>
+</div>
+
+
+<script>
+    const canvas_size = 500;
+    const graph_canvas = document.getElementById('graph_canvas')
+    const circle_packing_canvas = document.getElementById('circle_packing_canvas')
+
+    graph_canvas.width=canvas_size;
+    graph_canvas.height=canvas_size;
+    circle_packing_canvas.width=canvas_size;
+    circle_packing_canvas.height=canvas_size;
+</script>
+
+<script src="origami.js"></script>
+
+
+</body>
+</html>
